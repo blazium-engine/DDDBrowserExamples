@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>All Features Scene</title>
+    
+    <meta name="scene:id" content="all_features_scene">
+    <meta name="scene:name" content="All Features Scene">
+    <meta name="scene:author" content="DDDBrowser Examples">
+    <meta name="scene:rating" content="GENERAL">
+    <meta name="scene:thumbnail" content="https://blazium-engine.github.io/DDDBrowserExamples/assets/icon.jpg">
+    
+    <script id="blazium-scene" type="application/vnd.blazium.scene+json">
+    {
+      "name": "All Features Scene",
+      "version": "1.0",
+      "schemaVersion": "1.0",
+      "description": "Comprehensive scene demonstrating all new features: textbox, picturebox, audio, font, ImGui textbox, and URL modal",
+      "assets": [
+        {
+          "id": "capsule-model",
+          "type": "model",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule.obj",
+          "mediaType": "model/obj"
+        },
+        {
+          "id": "capsule-material",
+          "type": "material",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule.mtl",
+          "mediaType": "model/mtl"
+        },
+        {
+          "id": "capsule-texture",
+          "type": "texture",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule0.jpg",
+          "mediaType": "image/jpeg"
+        },
+        {
+          "id": "uv-grid-texture",
+          "type": "texture",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/meshes/blazium_uv_grid_r003_128.png",
+          "mediaType": "image/png"
+        },
+        {
+          "id": "picturebox-asset",
+          "type": "picturebox",
+          "uri": "data:text/plain,picturebox",
+          "mediaType": "application/json",
+          "picturebox": {
+            "texture": "uv-grid-texture",
+            "width": 2.0,
+            "height": 2.0
+          }
+        },
+        {
+          "id": "test-audio",
+          "type": "audio",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/24.wav",
+          "mediaType": "audio/wav",
+          "audio": {
+            "format": "wav",
+            "ambient": false
+          }
+        },
+        {
+          "id": "ambient-audio",
+          "type": "audio",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/24.wav",
+          "mediaType": "audio/wav",
+          "audio": {
+            "format": "wav",
+            "ambient": true
+          }
+        },
+        {
+          "id": "custom-font",
+          "type": "font",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/PublicPixel.ttf",
+          "mediaType": "font/ttf",
+          "font": {
+            "size": 16,
+            "style": "normal"
+          }
+        },
+        {
+          "id": "quest-textbox-asset",
+          "type": "textbox",
+          "uri": "data:text/plain,quest-textbox",
+          "mediaType": "application/json",
+          "textbox": {
+            "text": "Welcome to the comprehensive features test! All new features are demonstrated here.",
+            "title": "All Features Test",
+            "size": 1.0,
+            "color": {"x": 1.0, "y": 1.0, "z": 1.0}
+          }
+        },
+        {
+          "id": "combined-script",
+          "type": "script",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/combined_features_test.luau",
+          "mediaType": "application/x-luau"
+        }
+      ],
+      "instances": [
+        {
+          "id": "capsule-main",
+          "asset": "capsule-model",
+          "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "script": {
+            "file": "combined-script",
+            "data": {
+              "boundingRadius": 5.0
+            }
+          }
+        },
+        {
+          "id": "textbox-instance",
+          "type": "textbox",
+          "position": {"x": 0.0, "y": 3.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "textbox": {
+            "asset": "quest-textbox-asset",
+            "font": "custom-font"
+          }
+        },
+        {
+          "id": "picturebox-1",
+          "type": "picturebox",
+          "position": {"x": 5.0, "y": 2.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 45.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "picturebox": {
+            "asset": "picturebox-asset"
+          }
+        },
+        {
+          "id": "picturebox-2",
+          "type": "picturebox",
+          "position": {"x": -5.0, "y": 2.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": -45.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "picturebox": {
+            "asset": "picturebox-asset"
+          }
+        },
+        {
+          "id": "spatial-audio-instance",
+          "type": "audio",
+          "position": {"x": 0.0, "y": 2.0, "z": 5.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "audio": {
+            "asset": "test-audio",
+            "loop": false,
+            "volume": 0.8
+          }
+        },
+        {
+          "id": "ambient-audio-instance",
+          "type": "audio",
+          "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "audio": {
+            "asset": "ambient-audio",
+            "loop": true,
+            "volume": 0.4
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <h1>All Features Scene</h1>
+    <p>Comprehensive scene demonstrating all new features together. Interact with the main capsule to experience the complete flow: quest dialog → audio feedback → URL opening.</p>
+</body>
+</html>
+

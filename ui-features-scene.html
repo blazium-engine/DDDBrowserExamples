@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>UI Features Scene</title>
+    
+    <meta name="scene:id" content="ui_features_scene">
+    <meta name="scene:name" content="UI Features Scene">
+    <meta name="scene:author" content="DDDBrowser Examples">
+    <meta name="scene:rating" content="GENERAL">
+    <meta name="scene:thumbnail" content="https://blazium-engine.github.io/DDDBrowserExamples/assets/icon.jpg">
+    
+    <script id="blazium-scene" type="application/vnd.blazium.scene+json">
+    {
+      "name": "UI Features Scene",
+      "version": "1.0",
+      "schemaVersion": "1.0",
+      "description": "Combined scene demonstrating all UI features: textbox, ImGui textbox, and URL modal",
+      "assets": [
+        {
+          "id": "capsule-model",
+          "type": "model",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule.obj",
+          "mediaType": "model/obj"
+        },
+        {
+          "id": "capsule-material",
+          "type": "material",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule.mtl",
+          "mediaType": "model/mtl"
+        },
+        {
+          "id": "capsule-texture",
+          "type": "texture",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule0.jpg",
+          "mediaType": "image/jpeg"
+        },
+        {
+          "id": "quest-textbox-asset",
+          "type": "textbox",
+          "uri": "data:text/plain,quest-textbox",
+          "mediaType": "application/json",
+          "textbox": {
+            "text": "Welcome to the UI Features test! Interact with different objects to test various UI elements.",
+            "title": "UI Features Test",
+            "size": 1.0,
+            "color": {"x": 1.0, "y": 1.0, "z": 1.0}
+          }
+        },
+        {
+          "id": "textbox-script",
+          "type": "script",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/textbox_test.luau",
+          "mediaType": "application/x-luau"
+        },
+        {
+          "id": "imgui-textbox-script",
+          "type": "script",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/imgui_textbox_test.luau",
+          "mediaType": "application/x-luau"
+        },
+        {
+          "id": "url-modal-script",
+          "type": "script",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/url_modal_test.luau",
+          "mediaType": "application/x-luau"
+        }
+      ],
+      "instances": [
+        {
+          "id": "capsule-textbox",
+          "asset": "capsule-model",
+          "position": {"x": -5.0, "y": 0.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "script": {
+            "file": "textbox-script",
+            "data": {
+              "boundingRadius": 5.0
+            }
+          }
+        },
+        {
+          "id": "capsule-imgui",
+          "asset": "capsule-model",
+          "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "script": {
+            "file": "imgui-textbox-script",
+            "data": {
+              "boundingRadius": 5.0
+            }
+          }
+        },
+        {
+          "id": "capsule-url",
+          "asset": "capsule-model",
+          "position": {"x": 5.0, "y": 0.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "script": {
+            "file": "url-modal-script",
+            "data": {
+              "boundingRadius": 5.0
+            }
+          }
+        },
+        {
+          "id": "textbox-instance",
+          "type": "textbox",
+          "position": {"x": -5.0, "y": 3.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "textbox": {
+            "asset": "quest-textbox-asset"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <h1>UI Features Scene</h1>
+    <p>Combined scene demonstrating all UI features. Interact with the left capsule for in-world textbox, center capsule for ImGui modal, and right capsule for URL modal.</p>
+</body>
+</html>
+

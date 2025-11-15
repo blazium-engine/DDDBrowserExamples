@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Audio Scene</title>
+    
+    <meta name="scene:id" content="audio_scene">
+    <meta name="scene:name" content="Audio Scene">
+    <meta name="scene:author" content="DDDBrowser Examples">
+    <meta name="scene:rating" content="GENERAL">
+    <meta name="scene:thumbnail" content="https://blazium-engine.github.io/DDDBrowserExamples/assets/icon.jpg">
+    
+    <script id="blazium-scene" type="application/vnd.blazium.scene+json">
+    {
+      "name": "Audio Scene",
+      "version": "1.0",
+      "schemaVersion": "1.0",
+      "description": "Scene demonstrating spatial and ambient audio playback",
+      "assets": [
+        {
+          "id": "capsule-model",
+          "type": "model",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule.obj",
+          "mediaType": "model/obj"
+        },
+        {
+          "id": "capsule-material",
+          "type": "material",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule.mtl",
+          "mediaType": "model/mtl"
+        },
+        {
+          "id": "capsule-texture",
+          "type": "texture",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule0.jpg",
+          "mediaType": "image/jpeg"
+        },
+        {
+          "id": "test-audio",
+          "type": "audio",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/24.wav",
+          "mediaType": "audio/wav",
+          "audio": {
+            "format": "wav",
+            "ambient": false
+          }
+        },
+        {
+          "id": "ambient-audio",
+          "type": "audio",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/24.wav",
+          "mediaType": "audio/wav",
+          "audio": {
+            "format": "wav",
+            "ambient": true
+          }
+        },
+        {
+          "id": "audio-script",
+          "type": "script",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/audio_test.luau",
+          "mediaType": "application/x-luau"
+        }
+      ],
+      "instances": [
+        {
+          "id": "capsule-instance",
+          "asset": "capsule-model",
+          "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "script": {
+            "file": "audio-script",
+            "data": {
+              "boundingRadius": 5.0
+            }
+          }
+        },
+        {
+          "id": "spatial-audio-instance",
+          "type": "audio",
+          "position": {"x": 5.0, "y": 2.0, "z": 5.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "audio": {
+            "asset": "test-audio",
+            "loop": false,
+            "volume": 0.8
+          }
+        },
+        {
+          "id": "ambient-audio-instance",
+          "type": "audio",
+          "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "audio": {
+            "asset": "ambient-audio",
+            "loop": true,
+            "volume": 0.5
+          }
+        },
+        {
+          "id": "looping-audio-instance",
+          "type": "audio",
+          "position": {"x": -5.0, "y": 2.0, "z": -5.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "audio": {
+            "asset": "test-audio",
+            "loop": true,
+            "volume": 1.0
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <h1>Audio Scene</h1>
+    <p>Scene demonstrating spatial and ambient audio playback. Interact with the capsule to test audio controls. Move around to test spatial audio positioning.</p>
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ImGui Textbox Scene</title>
+    
+    <meta name="scene:id" content="imgui_textbox_scene">
+    <meta name="scene:name" content="ImGui Textbox Scene">
+    <meta name="scene:author" content="DDDBrowser Examples">
+    <meta name="scene:rating" content="GENERAL">
+    <meta name="scene:thumbnail" content="https://blazium-engine.github.io/DDDBrowserExamples/assets/icon.jpg">
+    
+    <script id="blazium-scene" type="application/vnd.blazium.scene+json">
+    {
+      "name": "ImGui Textbox Scene",
+      "version": "1.0",
+      "schemaVersion": "1.0",
+      "description": "Scene demonstrating on-screen ImGui textbox modals with quest and ToS acceptance scenarios",
+      "assets": [
+        {
+          "id": "capsule-model",
+          "type": "model",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule.obj",
+          "mediaType": "model/obj"
+        },
+        {
+          "id": "capsule-material",
+          "type": "material",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule.mtl",
+          "mediaType": "model/mtl"
+        },
+        {
+          "id": "capsule-texture",
+          "type": "texture",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/capsule0.jpg",
+          "mediaType": "image/jpeg"
+        },
+        {
+          "id": "imgui-textbox-script",
+          "type": "script",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/imgui_textbox_test.luau",
+          "mediaType": "application/x-luau"
+        }
+      ],
+      "instances": [
+        {
+          "id": "capsule-instance",
+          "asset": "capsule-model",
+          "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "script": {
+            "file": "imgui-textbox-script",
+            "data": {
+              "boundingRadius": 5.0
+            }
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <h1>ImGui Textbox Scene</h1>
+    <p>Scene demonstrating on-screen ImGui textbox modals. Interact with the capsule to open a Terms of Service acceptance dialog with checkboxes and buttons.</p>
+</body>
+</html>
+

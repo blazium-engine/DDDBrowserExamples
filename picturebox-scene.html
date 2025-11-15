@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Picturebox Scene</title>
+    
+    <meta name="scene:id" content="picturebox_scene">
+    <meta name="scene:name" content="Picturebox Scene">
+    <meta name="scene:author" content="DDDBrowser Examples">
+    <meta name="scene:rating" content="GENERAL">
+    <meta name="scene:thumbnail" content="https://blazium-engine.github.io/DDDBrowserExamples/assets/icon.jpg">
+    
+    <script id="blazium-scene" type="application/vnd.blazium.scene+json">
+    {
+      "name": "Picturebox Scene",
+      "version": "1.0",
+      "schemaVersion": "1.0",
+      "description": "Scene demonstrating pictureboxes with double-sided textured quads",
+      "assets": [
+        {
+          "id": "uv-grid-texture",
+          "type": "texture",
+          "uri": "https://blazium-engine.github.io/DDDBrowserExamples/assets/meshes/blazium_uv_grid_r003_128.png",
+          "mediaType": "image/png"
+        },
+        {
+          "id": "picturebox-asset-1",
+          "type": "picturebox",
+          "uri": "data:text/plain,picturebox-1",
+          "mediaType": "application/json",
+          "picturebox": {
+            "texture": "uv-grid-texture",
+            "width": 2.0,
+            "height": 2.0
+          }
+        },
+        {
+          "id": "picturebox-asset-2",
+          "type": "picturebox",
+          "uri": "data:text/plain,picturebox-2",
+          "mediaType": "application/json",
+          "picturebox": {
+            "texture": "uv-grid-texture",
+            "width": 3.0,
+            "height": 1.5
+          }
+        }
+      ],
+      "instances": [
+        {
+          "id": "picturebox-instance-1",
+          "type": "picturebox",
+          "position": {"x": 0.0, "y": 2.0, "z": -5.0},
+          "rotation": {"x": 0.0, "y": 0.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "picturebox": {
+            "asset": "picturebox-asset-1"
+          }
+        },
+        {
+          "id": "picturebox-instance-2",
+          "type": "picturebox",
+          "position": {"x": 5.0, "y": 2.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": 45.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "picturebox": {
+            "asset": "picturebox-asset-2"
+          }
+        },
+        {
+          "id": "picturebox-instance-3",
+          "type": "picturebox",
+          "position": {"x": -5.0, "y": 2.0, "z": 0.0},
+          "rotation": {"x": 0.0, "y": -45.0, "z": 0.0},
+          "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+          "picturebox": {
+            "asset": "picturebox-asset-1"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <h1>Picturebox Scene</h1>
+    <p>Scene demonstrating pictureboxes with double-sided textured quads. Multiple pictureboxes at different positions and rotations.</p>
+</body>
+</html>
+
